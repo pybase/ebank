@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="conatiner">
+  <div class="row">
+    {% for i in banking %}
+      <div class="col-md-3 mb-4">
+<div class="card text-center h-100" style="width:18rem;">
+  <img src="{{i.img.url}}" class="card-img-top" alt="finance" height="200" margin-top="5">
+  <div class="card-body">
+    <h5 class="card-title">{{i.head_name}}</h5>
+    <p class="card-text">{{i.desc}}</p>
+
+  </div>
+</div>
+          </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="d-grid gap-2 d-md-block">
+  <a href="{% url 'credentials:login' %}" class="btn btn-primary btn-block">Login here</a>
+</div>
+<!--{% for i in banking %}-->
+<!--<h2>{{i.head_name}}</h2>-->
+
+<!--<img src="{{i.img.url}}">-->
+
+<!--<p>{{i.desc}}</p>-->
+<!--{% endfor %}-->
+
+{% endblock %}

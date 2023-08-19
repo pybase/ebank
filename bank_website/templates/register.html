@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+     <style>
+        input {background-color:rgb(230, 230, 250);padding:2px;font-size:17px;
+        }
+    </style>
+</head>
+<body>
+<h3>Register here</h3>
+<form method="POST" action="register">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="username"><br>
+  <input type="password" name="password" placeholder="password"><br>
+  <input type="password" name="cpassword" placeholder="confirm_password">
+    <button type="button" class="btn btn-info"><a href="{% url 'credentials:login' %}">Submit</a></button>
+</form>
+
+{% for i in messages %}
+<h4>{{i}}</h4>
+{% endfor %}
+</body>
+</html>
+
